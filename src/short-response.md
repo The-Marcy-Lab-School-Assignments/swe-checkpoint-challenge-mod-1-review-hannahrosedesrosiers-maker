@@ -32,9 +32,10 @@ console.log(getLetterGrade(95)); // This should print "Your grade is: A"
 console.log(getLetterGrade(82)); // This should print "Your grade is: B"
 console.log(getLetterGrade(74)); // This should print "Your grade is: C"
 console.log(getLetterGrade(65)); // This should print "Your grade is: F"
-```
+ ```
 
 **Part A**: Explain why this bug is occurring. Use proper technical terminology.
+
 
 **Part B**: Then, explain how you would fix it.
 
@@ -42,11 +43,11 @@ console.log(getLetterGrade(65)); // This should print "Your grade is: F"
 
 **Part A:**
 
-Your response...
+This error is occuring because let is being reassigned after every new `if` or `else` statement, creating block-scoped variables.
 
 **Part B:**
 
-Your response...
+I would remove 
 
 ---
 
@@ -69,7 +70,7 @@ console.log(originalSettings.volume);
 
 **Part A:**
 
-Your response...
+`console.log(originalSettings.volume);` will log the volume as 75.
 
 **Part B:**
 
@@ -109,5 +110,36 @@ Walk through what happens in the first iteration of filter:
 - What happens with that returned value?
 
 ### Response 3
+On the first iteration, filter passes the first element of the products array to the callback.
+So, product is the first elememnt:
 
-Your response...
+```js
+{ name: "Laptop", price: 1000, inStock: true }
+```
+
+For this product, `product.inStock` is `true`.
+So, the callback returns:
+
+`true`
+
+If the callback returns true, that `true` element is put in the new array.
+If it returned false, the element is not put into the new array.
+Since the callback returns true for the first product, this object:
+
+```js
+{ name: "Laptop", price: 1000, inStock: true }
+```
+is included in the new array.
+
+
+
+
+
+
+
+
+
+
+
+
+
